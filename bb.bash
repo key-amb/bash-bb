@@ -8,9 +8,9 @@ _bb_bench() {
   local loop=$2
   echo -n "Exec '${script}' ${loop} times ..."
   local i
-  time for i in $(seq 1 $loop); do
-    bash -c ${script} >/dev/null 2>&1
-  done
+  time bash -c "for i in \$(seq 1 $loop); do
+    ${script} >/dev/null 2>&1
+  done"
 }
 
 bb() {
