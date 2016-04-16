@@ -26,14 +26,9 @@ bb() {
   done
 }
 
-if [ "$0" = "${BASH_SOURCE}" ]; then
-  bb "$@"
-fi
+bb "$@"
 
-if [ $BB_NO_FUNCTION ]; then
-  unset -f _bb_bench
-  unset -f bb
-fi
+exit 0
 
 : <<'__EOF__'
 
