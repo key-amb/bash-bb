@@ -4,11 +4,6 @@
 
 # SYNOPSYS
 
-    # Run as script
-    loop=1000 bb.bash "<bash code A>" [...]
-
-    # Run as function
-    . bb.bash
     loop=1000 bb "<bash code A>" [...]
 
     # Debug

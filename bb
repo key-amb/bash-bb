@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BB_VERSION="0.1.0"
+version="0.2.0"
 
 _bb_bench() {
   local script=$1
@@ -26,6 +26,19 @@ bb() {
   done
 }
 
+version() {
+  echo $version
+  exit 0
+}
+
+case $1 in
+  "-v" | "--version" )
+    version
+    ;;
+  * )
+    ;;
+esac
+
 bb "$@"
 
 exit 0
@@ -40,11 +53,6 @@ B<bb> - A Benchmark tool for Bash script
 
 =head1 SYNOPSYS
 
-    # Run as script
-    loop=1000 bb.bash "<bash code A>" [...]
-
-    # Run as function
-    . bb.bash
     loop=1000 bb "<bash code A>" [...]
 
     # Debug

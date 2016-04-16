@@ -1,11 +1,11 @@
 .PHONY: doc release
 
-VERSION = $(shell . bb.bash && echo $${BB_VERSION})
+VERSION = $(shell bb --version)
 
 doc: README.md
-	pod2markdown bb.bash > README.md
+	pod2markdown bb > README.md
 
-release:
+release: doc
 	git add .
 	git commit -m $(VERSION)
 	git tag -a v$(VERSION) -m $(VERSION)
