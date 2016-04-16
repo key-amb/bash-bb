@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+BB_VERSION="0.1.0"
+
 _bb_bench() {
   local script=$1
   local loop=$2
